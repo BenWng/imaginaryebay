@@ -6,7 +6,7 @@
     angular.module("ShopApp")
         .factory("UserService", UserService);
 
-    function UserService($http) {
+    function UserService($cookies) {
 
         var currentUser;
 
@@ -18,11 +18,17 @@
         return service;
 
         function returnUser() {
-            return currentUser;
+            if(currentUser!==undefined) {
+                return currentUser;
+            }
+            else{
+                return $cookies.get("user");
+            }
         }
 
         function setUser(newUser) {
             currentUser=newUser;
+            $cookies.put("user",currentUser);
         }
         
     }
