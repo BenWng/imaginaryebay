@@ -55,10 +55,12 @@ function navigationController($scope,$http,UserService,$location){
     }
 
     $scope.logout=function(){
-        console.log("hi");
         $http.get("/logout").then(
             function(res){
-                console.log("Successfully log out");
+                $scope.loggedInFlag=false;
+                $scope.currentUser=undefined;
+                UserService.deleteUser();
+                $location.path("/app/home");
             },
             function(err){
                 console.log(err);

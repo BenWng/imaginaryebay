@@ -1,8 +1,10 @@
 package com.imaginaryebay.Controller;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
@@ -47,4 +49,7 @@ public interface FrontPageController {
     @RequestMapping(value = "/app/contact", method=RequestMethod.GET)
     public ModelAndView getContactPage();
 
+    @RequestMapping(value = "/login", method=RequestMethod.GET,produces = "application/json")
+    @ResponseBody
+    public String handleLogout();
 }
