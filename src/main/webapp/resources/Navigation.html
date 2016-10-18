@@ -33,6 +33,7 @@
                         <li ng-show="{{loggedInFlag}}"><a href="/app/user/{{id}}/update">Update My Information</a></li>
                         <li ng-show="{{adminFlag}}"><a href="/app/admin">Administrator's Page</a></li>
                         <li class="nav-divider"></li>
+                        <li ng-show="{{loggedInFlag}}"><a ng-click="logout()">Log out</a></li>
                         <li><a href="/app/contact">Contact Us</a></li>
                     </ul>
                 </li>

@@ -54,6 +54,16 @@ function navigationController($scope,$http,UserService,$location){
         $location.path("/app/search"+"/"+additionalInfo);
     }
 
-
+    $scope.logout=function(){
+        console.log("hi");
+        $http.get("/logout").then(
+            function(res){
+                console.log("Successfully log out");
+            },
+            function(err){
+                console.log(err);
+            }
+        )
+    }
 
 }

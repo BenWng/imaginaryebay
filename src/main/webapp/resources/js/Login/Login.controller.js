@@ -37,7 +37,6 @@ function loginController($scope,$http,$route,UserService,$location,$q){
             function(res){
                 var user=res.data;
                 UserService.setUser(user);
-                console.log(UserService.returnUser());
                 $location.path("/app/home");
             }
         );
