@@ -23,8 +23,13 @@
     <!-- Angular JS-->
     <script src="<c:url value="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"/>"></script>
 
+    <!-- Angular cookies-->
+    <script src="<c:url value="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-cookies.js"/>"></script>
+
     <!-- ng Route-->
     <script src="<c:url value="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.js" />"> </script>
+
+
 
     <%--Disqus directive--%>
     <script src="<c:url value="/resources/js/dirDisqus.js"/>"></script>
