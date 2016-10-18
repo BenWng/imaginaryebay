@@ -12,7 +12,8 @@
 
         var service = {
             returnUser: returnUser,
-            setUser: setUser
+            setUser: setUser,
+            deleteUser:deleteUser
 
         };
         return service;
@@ -32,6 +33,12 @@
             $cookieStore.remove("user");
             $cookieStore.put("user",currentUser);
         }
+
+        function deleteUser(){
+            currentUser=undefined;
+            $cookieStore.remove("user");
+        }
+
         
     }
 }());
