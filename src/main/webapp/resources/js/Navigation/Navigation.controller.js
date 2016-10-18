@@ -8,7 +8,7 @@
 function navigationController($scope,$http,UserService,$location){
     $scope.loggedInFlag=false;
     $scope.currentUser=UserService.returnUser();
-    if ($scope.currentUser!=null){
+    if ($scope.currentUser!==undefined){
         $scope.loggedInFlag=true;
         $scope.id = $scope.currentUser.id;
         $scope.adminFlag=$scope.currentUser.admin;
