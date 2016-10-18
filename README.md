@@ -10,7 +10,7 @@ Intellij Configuration
 
 
 
-To login:
+To log in or log out:
 ----------
 1. not store the cookies:
 
@@ -18,7 +18,12 @@ To login:
 	
 2. store the cookies:
 	
-	curl -X POST -d username=butters@gmail.com -d password=Stotch -c ./cookies.txt http://localhost:8080/login 
+	curl -X POST -d username=butters@gmail.com -d password=Stotch -c ./cookies.txt http://localhost:8080/login
+
+3. log out:
+
+    curl -X GET -b cookies.txt http://localhost:8080/logout
+
 
 
 
