@@ -4,9 +4,15 @@ Imaginary Ebay
 Intellij Configuration
 ---------------------
 1. DATABASE_URL    postgresql://postgres::@localhost:5432/test
-2. AWS_SECRET      HM8jw0ZSIZekX/b1Rcohu39Mfq1mlNWQ+o2Qk54N
-3. AWS_PUBLIC      AKIAJSNMBTJ6HVQZ3CKQ
+2. AWS_SECRET       see below
+3. AWS_PUBLIC       see below
 
+The values of these two variables correspond to the credentials in Amazon Web Service, Security Credentials: IAM.
+Please create a user in IAM and add the three variables in Intellij's Run/Debug Configuration under the
+tab: Startup/Connection
+
+Please also update the variable BUCKET in the file Models/S3FileUploader, the variable correspond to the BUCKET's name
+you create in AWS S3.
 
 
 
