@@ -13,7 +13,7 @@ function searchController($scope, UserService, $location){
     this.numOfItemsOnEachPage=9;
     this.totalUrl="item/count";
     this.itemUrl="/item/page/";
-    this.picUrl="http://placehold.it/800x800";
+    this.picUrl="http://placehold.it/800x400";
 
     var path=$location.path();
 
