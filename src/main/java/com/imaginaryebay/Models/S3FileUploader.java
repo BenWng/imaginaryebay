@@ -37,7 +37,7 @@ public class S3FileUploader {
     private static final String         IMAGE_JPEG      = "image/jpeg";
     private static final String         IMAGE_PNG       = "image/png";
     private static final String         FILENAME_HEADER = "filename";
-    private static final String         BUCKET          = "odbneu";
+    private static final String         BUCKET          = "imaginaryebay";
     private static final String         THUMB_SUFFIX    = "_thumb";
     private static final String         INVALID_TYPE    = "Invalid file type. Files must be either .png or .jpg format.";
     private static final AWSCredentials AWS_CREDENTIALS = new BasicAWSCredentials(System.getenv("AWS_PUBLIC"),
