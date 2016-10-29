@@ -136,6 +136,14 @@ public class S3FileUploader {
         BufferedImage image = null;
         try{
             image = ImageIO.read(bais);
+            int type=image.getType();
+            BufferedImage resizedImage=new BufferedImage(TARGET_WIDTH,TARGET_HEIGHT,type);
+            Graphics2D g=resizedImage.createGraphics();
+            g.drawImage(image,0,0,TARGET_WIDTH,TARGET_HEIGHT,null);
+            g.dispose();
+            return resizedImage;
+
+            /*
             int width = image.getWidth() % 2 == 0 ? image.getWidth() : image.getWidth()+1;
             int height = image.getHeight() % 2 == 0 ? image.getHeight() : image.getHeight()+1;
 
@@ -155,7 +163,7 @@ public class S3FileUploader {
 
             image = Scalr.crop(image, start_x, start_y, newWidth, newHeight);
             image = Scalr.resize(image, Scalr.Method.SPEED, TARGET_WIDTH, TARGET_HEIGHT);
-            return image;
+            return image;*/
         }catch(IOException ioe){
             throw new IOException(ioe.getMessage());
         }
