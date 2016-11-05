@@ -144,7 +144,7 @@ public class BiddingDAOImpl implements  BiddingDAO{
         query.setFirstResult((pageNum-1)*pageSize);
         query.setMaxResults(pageSize);
         List<Item> itemList=query.getResultList();
-        itemList.sort((a,b)-> a.getEndtime().after(b.getEndtime())?1:-1);
+        //itemList.sort((a,b)-> a.getEndtime().after(b.getEndtime())?1:-1);
         return itemList;
     }
 
