@@ -27,7 +27,6 @@ function userupdateController($scope, $http, UserService, $location, $routeParam
 
     }
 
-    console.log("changed one shit userra is " + userr);
 
     $scope.update = function () {
 
@@ -36,48 +35,36 @@ function userupdateController($scope, $http, UserService, $location, $routeParam
             return;
         }
 
-        console.log("made it past enter password");
-
-        // if (userr.password != $scope.old) {
-        //     window.alert("The old password you entered was incorrect.");
-        //     return;
-        // }
 
         if ($scope.first != $scope.confirm) {
             window.alert("Your new password entries don't match.");
             return;
         }
 
-        console.log("made it here do passwords match");
 
         var updatedName = (($scope.name == null) || ($scope.name == "")) ? userr.name : $scope.name;
         
-        console.log("passed name, name is " + updatedName);
 
         var updatedEmail = (($scope.email == null) || ($scope.email == "")) ? userr.email : $scope.email;
 
-        console.log("past email, email is " + updatedEmail);
 
         var updatedAddress = ($scope.loc == null) ? userr.address : $scope.loc;
 
-        console.log("past address, adress is: " + updatedAddress);
 
         var newPass = (($scope.first == null) || ($scope.first == "")) ? $scope.old : $scope.first;
 
-        console.log("past password, updated pass is " + newPass);
 
         var admin = userr.admin;
 
-        console.log("past admin, admin is " + admin);
 
 
         var updatedUser = {
+            id: userID,
             name: updatedName,
             address: updatedAddress,
             email: updatedEmail,
             password: newPass,
-            isAdmin: admin,
-
+            isAdmin: admin
         }
 
 
@@ -85,6 +72,7 @@ function userupdateController($scope, $http, UserService, $location, $routeParam
             .then(
                 function (res) {
                     window.alert("User information updated successfully!");
+                    UserService.updateUser(updatedUser)
                     $location.path("app/user/" + userID);
                 }, function (res) {
                     window.alert("User information update failed: " + res.data.detailedMessage);
