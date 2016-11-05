@@ -133,7 +133,7 @@ public class BiddingDAOImpl implements  BiddingDAO{
     }
 
     private Query byActiveness(Long bidderId){
-        Query query = entityManager.createQuery("select b.item from Bidding b where b.item.endtime > ?1 and b.userr.id = ?2 order by b.item.endtime desc");
+        Query query = entityManager.createQuery("select distinct b.item from Bidding b where b.item.endtime > ?1 and b.userr.id = ?2 order by b.item.endtime desc");
         Timestamp currentTime = new Timestamp((new java.util.Date()).getTime());
         Query query2 = query.setParameter(1, currentTime);
         query2.setParameter(2, bidderId);
